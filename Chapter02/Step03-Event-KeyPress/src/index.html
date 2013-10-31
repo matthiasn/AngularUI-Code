@@ -11,7 +11,8 @@
 <div class="container" data-ng-controller="helloWorldCtrl">
     <div class="row spacer-sm">
         <label class="col-xs-5 text-right" for="fname">First Name</label>
-        <input class="col-xs-7" type="text" id="fname" data-ng-model="name.first">
+        <input class="col-xs-7" type="text" id="fname" data-ng-model="name.first"
+               data-ui-event="{ focus: 'focusCallback()', blur : 'blurCallback()' }" >
     </div>
     <div class="row spacer-sm">
         <label class="col-xs-5 text-right" for="lname">Last Name</label>
@@ -22,7 +23,7 @@
         <input class="col-xs-7" type="tel" id="phone" data-ui-mask="{{ mask }}" data-ng-model="name.phone">
     </div>
     <div class="row spacer-lg">
-        <pre class="col-xs-12"><code>{{ getModel() }}</code></pre>
+        <pre ng-style="fnameStatus()" class="col-xs-12"><code>{{ getModel() }}</code></pre>
     </div>
 </div>
 <!--(if target dev)><!-->

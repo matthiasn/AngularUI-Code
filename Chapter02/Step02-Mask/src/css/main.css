@@ -3,3 +3,14 @@ body {
     font-size: 1.2em;
     margin: 50px;
 }
+
+.phone-input {
+    width: 150px;
+}
+
+pre {
+    padding: 12px;
+    width: 400px;
+    background: #EEE;
+    border: 1px solid #CCC;
+}

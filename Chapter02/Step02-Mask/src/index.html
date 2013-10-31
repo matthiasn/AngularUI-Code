@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Angular UI Template</title>
     <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body data-ng-app="myApp">
-    <div data-ng-controller="helloWorldCtrl">
-      <h1 hello-world name="name" id="greeting"></h1>
-      
-      <input type="tel" name="phone" data-ng-model='name.phone'>
-      
-    </div>
-    <!--(if target dev)><!-->
-    <script src="js/vendor/angular.js"></script>
-    <script src="js/vendor/ui-utils.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/directives.js"></script>    
-    <!--<!(endif)-->
-    <!--(if target dist)><!-->
-    <script src="js/fun-with-ui-utils.js"></script>
-    <!--<!(endif)-->
-  </body>
+</head>
+<body data-ng-app="myApp">
+<div data-ng-controller="helloWorldCtrl">
+    <h1 hello-world name="name" id="greeting"></h1>
+    <label for="phone">Phone</label>
+    <input type="tel" class="phone-input" id="phone" data-ui-mask="{{ mask }}" data-ng-model="name.phone">
+    <div><pre><code>{{ getModel() }}</code></pre></div>
+</div>
+<!--(if target dev)><!-->
+<script src="js/vendor/angular.js"></script>
+<script src="js/vendor/ui-utils.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/directives.js"></script>
+<!--<!(endif)-->
+<!--(if target dist)><!-->
+<script src="js/fun-with-ui-utils.js"></script>
+<!--<!(endif)-->
+</body>
 </html>

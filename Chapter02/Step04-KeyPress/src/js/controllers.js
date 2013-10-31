@@ -12,7 +12,7 @@ angular.module('myApp.controllers', []).controller('helloWorldCtrl', function ($
     var colors = ["#CCC", "#F77", "#9F9"];
     var activeColor = 0;
 
-    $scope.fnameStatus = function() {
+    $scope.modelStatus = function() {
         return { backgroundColor: colors[activeColor] };
     } ;
 
@@ -23,5 +23,11 @@ angular.module('myApp.controllers', []).controller('helloWorldCtrl', function ($
     $scope.blurCallback = function() {
         activeColor = 2;
         $timeout(function() { activeColor = 0; }, 2000);
+    };
+
+    $scope.helpKeyDown = function($event) {
+        console.log($event);
+        $scope.helpText = "Easy. Just enter your name."
+        $timeout(function() { $scope.helpText = "" }, 10000);
     };
 });

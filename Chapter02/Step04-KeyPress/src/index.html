@@ -16,15 +16,17 @@
     </div>
     <div class="row spacer-sm">
         <label class="col-xs-5 text-right" for="lname">Last Name</label>
-        <input class="col-xs-7" type="text" id="lname" data-ng-model="name.last">
+        <input class="col-xs-7" type="text" id="lname" data-ng-model="name.last"
+               data-ui-keydown="{112:'helpKeyDown($event)'}">
     </div>
     <div class="row spacer-sm">
         <label class="col-xs-5 text-right" for="phone">Phone</label>
         <input class="col-xs-7" type="tel" id="phone" data-ui-mask="{{ mask }}" data-ng-model="name.phone">
     </div>
     <div class="row spacer-lg">
-        <pre ng-style="fnameStatus()" class="col-xs-12"><code>{{ getModel() }}</code></pre>
+        <pre ng-style="modelStatus()" class="col-xs-12"><code>{{ getModel() }}</code></pre>
     </div>
+    <div>{{ helpText }}</div>
 </div>
 <!--(if target dev)><!-->
 <script src="js/vendor/angular.js"></script>

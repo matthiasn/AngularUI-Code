@@ -23,10 +23,13 @@
         <label class="col-xs-5 text-right" for="phone">Phone</label>
         <input class="col-xs-7" type="tel" id="phone" data-ui-mask="{{ mask }}" data-ng-model="name.phone">
     </div>
+    <div class="row spacer-lg" data-ng-show="helpText">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">{{ helpText }}</div>
+    </div>
     <div class="row spacer-lg">
         <pre ng-style="modelStatus()" class="col-xs-12"><code>{{ getModel() }}</code></pre>
     </div>
-    <div>{{ helpText }}</div>
 </div>
 <!--(if target dev)><!-->
 <script src="js/vendor/angular.js"></script>

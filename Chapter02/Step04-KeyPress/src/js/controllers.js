@@ -27,7 +27,7 @@ angular.module('myApp.controllers', []).controller('helloWorldCtrl', function ($
 
     $scope.helpKeyDown = function($event) {
         console.log($event);
-        $scope.helpText = "Easy. Just enter your name."
+        $scope.helpText = "Easy. Just enter your name.";
         $timeout(function() { $scope.helpText = "" }, 10000);
     };
 });

@@ -1,0 +1,11 @@
+body {
+    margin: 20px;
+}
+
+.spacer-sm {
+    margin-top: 10px;
+}
+
+.spacer-lg {
+    margin-top: 30px;
+}

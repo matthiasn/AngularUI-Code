@@ -1,5 +1,5 @@
 {
-  "name": "fun-with-ui-utils",
+  "name": "fun-with-ui-modules",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.1",

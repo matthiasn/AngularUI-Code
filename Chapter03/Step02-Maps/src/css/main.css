@@ -9,3 +9,7 @@ body {
 .spacer-lg {
     margin-top: 30px;
 }
+
+.map-canvas {
+    height: 500px;
+}

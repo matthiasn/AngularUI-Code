@@ -1,0 +1,27 @@
+{
+  "name": "Step02-Maps",
+  "version": "0.1.0",
+  "homepage": "https://github.com/matthiasn/AngularUI-Code",
+  "authors": [
+    "Matthias Nehlsen <mn@nehlsen-edv.de>"
+  ],
+  "description": "Maps example",
+  "main": "src/index.html",
+  "keywords": [
+    "maps",
+    "module"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-map": "~0.0.2"
+  }
+}

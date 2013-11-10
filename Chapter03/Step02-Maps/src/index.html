@@ -3,27 +3,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Angular UI Template</title>
+    <title>Angular UI Modules</title>
     <link rel="stylesheet" href="css/vendor/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body data-ng-app="myApp">
-<div class="container" data-ng-controller="uiModulesCtrl">
+<body id="myApp">
 
+<section id="map" ng-controller="MapCtrl">
+    <div data-ui-map="myMap" data-ui-options="mapOptions" class="map-canvas"
+         data-ui-event="{'map-click': 'addMarker($event, $params)',
+           'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' }"></div>
+</section>
 
-
-</div>
 <!--(if target dev)><!-->
 <script src="js/vendor/jquery-1.10.2.js"></script>
-<script src="js/vendor/angular.js"></script>
-<script src="js/vendor/ui-utils.js"></script>
-<script src="js/vendor/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-utils/modules/event/event.js "></script>
+<script src="bower_components/angular-ui-map/src/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers.js"></script>
 <script src="js/directives.js"></script>
 <!--<!(endif)-->
-<!--(if target dist)><!-->
+<!--(if target dist)>
 <script src="js/fun-with-ui-modules.js"></script>
-<!--<!(endif)-->
+<!(endif)-->
 </body>
 </html>

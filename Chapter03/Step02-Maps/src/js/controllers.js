@@ -1,6 +1,5 @@
 'use strict';
-angular.module('myApp.controllers', []).controller('uiModulesCtrl', function ($scope, $timeout) {
-
+angular.module('myApp.controllers', []).controller('MapCtrl', function ($scope) {
     $scope.myMarkers = [];
 
     $scope.mapOptions = {
@@ -9,7 +8,7 @@ angular.module('myApp.controllers', []).controller('uiModulesCtrl', function ($s
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    $scope.addMarker = function($event) {
+    $scope.addMarker = function($event, $params) {
         $scope.myMarkers.push(new google.maps.Marker({
             map: $scope.myMap,
             position: $params[0].latLng

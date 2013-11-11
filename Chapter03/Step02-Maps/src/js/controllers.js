@@ -1,12 +1,19 @@
 'use strict';
-angular.module('myApp.controllers', []).controller('MapCtrl', function ($scope) {
+angular.module('myApp.controllers', []).controller('MapCtrl', function ($scope, $timeout) {
     $scope.myMarkers = [];
+
+    $scope.eventBinding = {'map-click': 'addMarker($event, $params)'};
 
     $scope.mapOptions = {
         center: new google.maps.LatLng(35.784, -78.670),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        zoom: 4,
+        mapTypeId: google.maps.MapTypeId.SATELLITE
     };
+
+    var weatherLayer = new google.maps.weather.WeatherLayer({
+        temperatureUnits: google.maps.weather.TemperatureUnit.FAHRENHEIT
+    });
+    var cloudLayer = new google.maps.weather.CloudLayer();
 
     $scope.addMarker = function($event, $params) {
         $scope.myMarkers.push(new google.maps.Marker({
@@ -20,15 +27,8 @@ angular.module('myApp.controllers', []).controller('MapCtrl', function ($scope) 
         console.log(zoom,'zoomed')
     };
 
-    $scope.openMarkerInfo = function(marker) {
-        $scope.currentMarker = marker;
-        $scope.currentMarkerLat = marker.getPosition().lat();
-        $scope.currentMarkerLng = marker.getPosition().lng();
-        $scope.myInfoWindow.open($scope.myMap, marker);
-    };
-
-    $scope.setMarkerPosition = function(marker, lat, lng) {
-        marker.setPosition(new google.maps.LatLng(lat, lng));
-    };
-
+    $timeout(function(){
+        weatherLayer.setMap($scope.myMap);
+        cloudLayer.setMap($scope.myMap);
+    }, 2000);
 });

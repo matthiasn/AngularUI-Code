@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Angular UI Modules</title>
+    <title>Angular UI Maps</title>
     <link rel="stylesheet" href="css/vendor/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -12,10 +12,13 @@
 <section id="map" ng-controller="MapCtrl">
     <div data-ui-map="myMap" data-ui-options="mapOptions" class="map-canvas"
          data-ui-event="eventBinding"></div>
+
+    <div class="latLng" data-ng-repeat="marker in myMarkers" data-ng-click="myMap.panTo(marker.getPosition())">
+        Lat: {{ marker.getPosition().lat() }} <br />Lng: {{ marker.getPosition().lng() }}</div>
+
 </section>
 
 <!--(if target dev)><!-->
-<script src="js/vendor/jquery-1.10.2.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-ui-utils/modules/event/event.js "></script>
 <script src="bower_components/angular-ui-map/src/map.js"></script>

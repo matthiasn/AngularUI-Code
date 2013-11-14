@@ -2,8 +2,6 @@
 angular.module('myApp.controllers', []).controller('MapCtrl', function ($scope, $timeout) {
     $scope.myMarkers = [];
 
-    $scope.eventBinding = {'map-click': 'addMarker($event, $params)'};
-
     $scope.mapOptions = {
         center: new google.maps.LatLng(37.782,-122.418),
         zoom: 4,
@@ -11,6 +9,9 @@ angular.module('myApp.controllers', []).controller('MapCtrl', function ($scope, 
     };
 
     var cloudLayer = new google.maps.weather.CloudLayer();
+    $timeout(function(){
+        cloudLayer.setMap($scope.myMap);
+    }, 1000);
 
     $scope.addMarker = function($event, $params) {
         $scope.myMarkers.push(new google.maps.Marker({
@@ -18,9 +19,5 @@ angular.module('myApp.controllers', []).controller('MapCtrl', function ($scope, 
             position: $params[0].latLng
         }));
     };
-
-    $timeout(function(){
-        cloudLayer.setMap($scope.myMap);
-    }, 1000);
-
+    $scope.eventBinding = {'map-click': 'addMarker($event, $params)'};
 });

@@ -1,13 +1,13 @@
 {
-  "name": "Step02-Maps",
+  "name": "Step03-Calendar",
   "version": "0.1.0",
   "homepage": "http://some-url.com",
   "authors": [ "John Doe <john@doe.com>" ],
-  "description": "AngularUI Map Example",
+  "description": "AngularUI Calendar Example",
   "main": "src/index.html",
   "keywords": [
     "angular",
-    "maps"
+    "calendar"
   ],
   "license": "MIT",
   "private": true,
@@ -20,6 +20,6 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ui-map": "~0.0.2"
+    "angular-ui-calendar": "latest"
   }
 }

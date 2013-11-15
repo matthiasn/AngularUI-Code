@@ -4,8 +4,11 @@ module.exports = function(grunt) {
     concat: {
       options: { separator: ';' },
       dist: {
-        src: [ 'src/js/vendor/jquery-1.10.2.js', 'src/js/vendor/angular.js',
-               'src/js/vendor/ui-utils.js', 'src/js/app.js', 'src/js/controllers.js' ],
+        src: [ 'bower_components/jquery/jquery.js',
+               'bower_components/jquery-ui/ui/jquery-ui.js',
+               'bower_components/angular/angular.js',
+               'bower_components/angular-ui-calendar/src/calendar.js',
+               'src/js/app.js', 'src/js/controllers.js' ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
     },
@@ -16,7 +19,9 @@ module.exports = function(grunt) {
     },
     targethtml: {
       dist: {
-        files: { 'dist/index.html': 'src/index.html' }
+        files: {
+          'dist/index.html': 'src/index.html'
+        }
       }
     },
     karma: {

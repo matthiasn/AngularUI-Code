@@ -4,17 +4,20 @@ module.exports = function(grunt) {
     concat: {
       options: { separator: ';' },
       dist: {
-        src: [ 'bower_components/jquery/jquery.js',
-               'bower_components/jquery-ui/ui/jquery-ui.js',
-               'bower_components/angular/angular.js',
-               'bower_components/angular-ui-calendar/src/calendar.js',
-               'src/js/app.js', 'src/js/controllers.js' ],
+        src: [ 'src/bower_components/jquery/jquery.js',
+               'src/bower_components/jquery-ui/ui/jquery-ui.js',
+               'src/bower_components/fullcalendar/fullcalendar.js',
+               'src/bower_components/momentjs/moment.js',
+               'src/bower_components/angular/angular.js',
+               'src/bower_components/angular-ui-calendar/src/calendar.js',
+               'src/js/app.js', 'src/js/controllers.js', 'src/js/filters.js' ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
     },
     copy: {
       main: {
-          files: [ { expand: true, cwd: 'src/css/', src: ['**'], dest: 'dist/css/' } ]
+          files: [ { expand: true, cwd: 'src/css/', src: ['**'], dest: 'dist/css/' },
+                   { expand: true, cwd: 'src/bower_components/fullcalendar/', src: ['*.css'], dest: 'dist/css/' } ]
       }
     },
     targethtml: {

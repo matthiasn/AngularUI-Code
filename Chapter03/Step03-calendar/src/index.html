@@ -1,26 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Angular UI Calendar</title>
     <link rel="stylesheet" href="css/main.css">
+    <!--(if target dev)><!-->
     <link rel="stylesheet" href="bower_components/fullcalendar/fullcalendar.css">
+    <!--<!(endif)-->
+    <!--(if target dist)>
+    <link rel="stylesheet" href="css/fullcalendar.css">
+    <!(endif)-->
 </head>
 <body ng-app="myApp">
 
 <div ng-controller="CalCtrl">
     <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+    <div class="cal-entry" ng-repeat="event in events">
+        <div class="delete" ng-click="remove()">X</div>
+        <div>{{ event.start | moment }}</div>
+        <div>{{ event | duration }}</div>
+        <input ng-model="event.title" />
+    </div>
 </div>
 
 <!--(if target dev)><!-->
 <script src="bower_components/jquery/jquery.js"></script>
 <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
 <script src="bower_components/fullcalendar/fullcalendar.js"></script>
+<script src="bower_components/momentjs/moment.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
 <!--<!(endif)-->
 <!--(if target dist)>
 <script src="js/fun-with-ui-modules.js"></script>

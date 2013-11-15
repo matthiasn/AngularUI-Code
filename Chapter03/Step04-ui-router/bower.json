@@ -1,0 +1,27 @@
+{
+  "name": "Step03-Calendar",
+  "version": "0.1.0",
+  "homepage": "http://some-url.com",
+  "authors": [
+    "John Doe <john@doe.com>"
+  ],
+  "description": "AngularUI Calendar Example",
+  "main": "src/index.html",
+  "keywords": [
+    "angular",
+    "calendar"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.0"
+  }
+}

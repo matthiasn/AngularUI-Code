@@ -4,13 +4,9 @@ module.exports = function(grunt) {
     concat: {
       options: { separator: ';' },
       dist: {
-        src: [ 'src/bower_components/jquery/jquery.js',
-               'src/bower_components/jquery-ui/ui/jquery-ui.js',
-               'src/bower_components/fullcalendar/fullcalendar.js',
-               'src/bower_components/momentjs/moment.js',
-               'src/bower_components/angular/angular.js',
-               'src/bower_components/angular-ui-calendar/src/calendar.js',
-               'src/js/app.js', 'src/js/controllers.js', 'src/js/filters.js' ],
+        src: [ 'src/bower_components/angular/angular.js',
+               'bower_components/angular-ui-router/release/angular-ui-router.js',
+               'src/js/app.js', 'src/js/controllers.js' ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
     },

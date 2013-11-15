@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('myApp', ['myApp.controllers', 'myApp.filters', 'ui.calendar']);
+angular.module('myApp', ['myApp.controllers', 'ui.router']);

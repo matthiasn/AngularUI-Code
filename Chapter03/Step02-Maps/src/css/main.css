@@ -6,7 +6,7 @@ body {
     height: 600px;
 }
 
-.latLng {
+.marker {
     width: 200px;
     color: lightskyblue;
     background-color: #333;

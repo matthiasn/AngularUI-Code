@@ -5,9 +5,9 @@ angular.module('myApp.controllers', []).controller('NgGridCtrl',
         $scope.gridOptions = {
             data: 'data',
             columnDefs: [
-                {field: 'lang', displayName: 'Language'},
-                {field: 'year', displayName: 'Year'},
-                {field: 'decade', displayName: 'Decade'}
+                {field: 'lang', displayName: 'Language', width: "45%"},
+                {field: 'year', displayName: 'Year', width: "25%"},
+                {field: 'decade', displayName: 'Decade', width: "30%"}
             ]
         };
     }]);

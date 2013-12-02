@@ -8,3 +8,8 @@ body {
     height: 600px;
     max-width: 500px;
 }
+
+label textarea{
+    vertical-align: middle;
+    width: 300px;
+}

@@ -11,6 +11,13 @@
 
 <div ng-controller="NgGridCtrl">
     <div class="gridStyle" ng-grid="gridOptions"></div>
+    <div ng-repeat="item in selection">
+        <h1>{{ item.decade}}: {{ item.lang }}</h1>
+        <p>{{ item.lang }} was created in {{ item.year }}. {{ item.comment }}</p>
+        <label for="comment-{{ $index }}">Details:
+        <textarea id="comment-{{ $index }}" ng-model="item.comment" rows="3"></textarea>
+        </label>
+    </div>
 </div>
 
 <!--(if target dev)><!-->

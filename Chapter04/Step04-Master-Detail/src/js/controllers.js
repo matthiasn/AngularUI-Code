@@ -13,6 +13,7 @@ angular.module('myApp.controllers', []).controller('NgGridCtrl',
             showGroupPanel: true,
             jqueryUIDraggable: true,
             selectedItems: $scope.selection,
-            multiSelect: true
+            multiSelect: true,
+            enableCellEdit: true
         };
     }]);

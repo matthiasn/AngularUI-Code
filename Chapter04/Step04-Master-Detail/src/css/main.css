@@ -5,11 +5,15 @@ body {
 
 .gridStyle {
     border: 1px solid #999;
-    height: 600px;
+    height: 300px;
+    max-width: 500px;
+}
+
+.detail {
     max-width: 500px;
 }
 
 label textarea{
     vertical-align: middle;
-    width: 300px;
+    width: 100%;
 }

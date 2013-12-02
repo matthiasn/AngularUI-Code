@@ -1,0 +1,10 @@
+body {
+    margin: 20px;
+    font-family: sans-serif;
+}
+
+.gridStyle {
+    border: 1px solid #999;
+    height: 600px;
+    max-width: 500px;
+}

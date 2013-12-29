@@ -1,0 +1,54 @@
+body {
+  margin: 100px 40px;
+  font-family: sans-serif;
+}
+
+.item {
+  width: 230px;
+  padding: 10px;
+  margin: 10px 0;
+  background: #ddd;
+  box-shadow: 5px 5px 5px #888888;
+  font-weight: bold;
+  position: relative;
+}
+
+@time-scale: 10;
+@enter-left: 1s;
+@enter-left-delay: 1s;
+@enter-top: 1s;
+@enter-fade: 2s;
+@leave-left: 1s;
+@leave-top: 1s;
+@leave-top-delay: 1s;
+@leave-fade: 2s;
+
+.item.ng-enter {
+  transition: left (@time-scale * @enter-left) cubic-bezier(0.68, -0.55, 0.265, 1.55) (@time-scale * @enter-left-delay),
+              top (@time-scale * @enter-top) cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              opacity (@time-scale * @enter-fade) linear;
+  opacity: 0;
+  left: 300px;
+  top: -500px;
+}
+
+.item.ng-enter.ng-enter-active {
+  opacity: 1;
+  left: 0;
+  top: 0;
+}
+
+.item.ng-leave {
+  transition: left (@time-scale * @leave-left) cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              top (@time-scale * @leave-top) cubic-bezier(0.68, -0.55, 0.265, 1.55) (@time-scale * @leave-top-delay),
+              opacity (@time-scale * @leave-fade) linear;
+  top:0;
+  left:0;
+  opacity: 1;
+}
+
+.item.ng-leave.ng-leave-active {
+  opacity: 0;
+  left: 300px;
+  top: 1000px;
+}

@@ -1,5 +1,5 @@
 body {
-    margin: 20px;
+    margin: 100px 40px;
     font-family: sans-serif;
 }
 
@@ -38,5 +38,5 @@ body {
 .item.ng-leave.ng-leave-active {
     opacity: 0;
     left: 300px;
-    top: 1500px;
+    top: 1000px;
 }

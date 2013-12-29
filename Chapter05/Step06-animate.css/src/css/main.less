@@ -1,0 +1,31 @@
+body {
+  margin: 100px 40px;
+  font-family: sans-serif;
+}
+
+@enter: 1s;
+@leave: 1s;
+
+.item {
+  width: 230px;
+  padding: 10px;
+  margin: 10px 0;
+  background: #ddd;
+  box-shadow: 5px 5px 5px #888888;
+  font-weight: bold;
+  position: relative;
+}
+
+.item.ng-enter {
+  -webkit-animation: lightSpeedIn @enter;
+  -moz-animation: lightSpeedIn @enter;
+  -ms-animation: lightSpeedIn @enter;
+  animation: lightSpeedIn @enter;
+}
+
+.item.ng-leave {
+  -webkit-animation: lightSpeedOut @leave;
+  -moz-animation: lightSpeedOut @leave;
+  -ms-animation: lightSpeedOut @leave;
+  animation: lightSpeedOut @leave;
+}

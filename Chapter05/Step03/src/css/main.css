@@ -1,0 +1,42 @@
+body {
+    margin: 20px;
+    font-family: sans-serif;
+}
+
+.item {
+    width: 230px;
+    padding: 10px;
+    margin: 10px 0;
+    background: #ddd;
+    box-shadow: 5px 5px 5px #888888;
+    font-weight: bold;
+    position: relative;
+}
+
+.item.ng-enter {
+    -webkit-transition: left 1s ease 1s, top 1s ease, opacity 2s linear;
+    transition: left 1s ease 1s, top 1s ease, opacity 2s linear;
+    opacity: 0;
+    left: 300px;
+    top: -500px;
+}
+
+.item.ng-enter.ng-enter-active {
+    opacity: 1;
+    left: 0;
+    top: 0;
+}
+
+.item.ng-leave {
+    -webkit-transition: left 1s ease, top 1s ease 1s, opacity 2s linear;
+    transition: left 1s ease, top 1s ease 1s, opacity 2s linear;
+    top:0;
+    left:0;
+    opacity: 1;
+}
+
+.item.ng-leave.ng-leave-active {
+    opacity: 0;
+    left: 300px;
+    top: 1500px;
+}

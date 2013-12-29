@@ -13,7 +13,7 @@ body {
 }
 
 .item.ng-enter {
-    -webkit-transition: 1s linear all;
+    -webkit-transition: 1.2s linear all;
     transition: 1.2s linear all;
     opacity: 0;
 }
@@ -23,7 +23,7 @@ body {
 }
 
 .item.ng-leave {
-    -webkit-transition: 1s linear all;
+    -webkit-transition: 1.2s linear all;
     transition: 1.2s linear all;
     opacity: 1;
 }

@@ -1,0 +1,29 @@
+.container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 1px solid gray;
+    margin: 0 auto;
+    box-shadow: 2px 2px 2px gray;
+    font-size: 14px;
+    color: white;
+    margin-top: calc((100% - 300px) / 2);
+}
+.bar1 {
+    width: calc(300px/2 - 15px);
+    position: absolute;
+    bottom: -0px;
+    height: 50%;
+    background: blue;
+    left: 10px;
+    text-align: center;
+}
+    .bar2 {
+    width: calc(300px/2 - 15px);
+    position: absolute;
+    bottom: 0px;
+    height: 80%;
+    background: green;
+    left: calc(300px/2 + 5px);
+    text-align: center;
+}

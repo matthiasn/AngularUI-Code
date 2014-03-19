@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Angular Bar Chart: Data Driven</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="myApp">
+
+  <div ng-controller="BarChartCtrl">
+    <div class='container' ng-style="{'padding-right': container.gap + 'px'}">
+      <div class='bar' ng-repeat="bar in bars" ng-style="setDetails(bar, $index)">{{bar.color}} - {{bar.percentage}}%</div>
+    </div>
+  </div>
+
+  <!--(if target dev)><!-->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <!--<!(endif)-->
+  <!--(if target dist)>
+  <script src="js/fun-with-charts.js"></script>
+  <!(endif)-->
+</body>
+</html>
+

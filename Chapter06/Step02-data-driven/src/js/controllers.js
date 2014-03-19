@@ -8,6 +8,14 @@ angular.module('myApp.controllers', []).controller('BarChartCtrl', function ($sc
     { color: 'red', percentage: 10 }
   ];
 
+  $scope.setContainer = function() {
+    return {
+      'padding-right': $scope.container.gap + 'px',
+      'width': $scope.container.width + 'px',
+      'height': $scope.container.height + 'px'
+    };
+  };
+
   $scope.setDetails = function(bar, index) {
     var barWidth = $scope.container.width/$scope.bars.length - $scope.container.gap;
 

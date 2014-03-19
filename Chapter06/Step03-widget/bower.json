@@ -1,0 +1,28 @@
+{
+  "name": "Step01",
+  "version": "0.1.0",
+  "homepage": "http://some-url.com",
+  "authors": [
+    "John Doe <john@doe.com>"
+  ],
+  "description": "Angular Bar Chart: Pure CSS",
+  "main": "src/index.html",
+  "keywords": [
+    "angular",
+    "animate"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3",
+    "angular": "~1.2.14"
+  }
+}

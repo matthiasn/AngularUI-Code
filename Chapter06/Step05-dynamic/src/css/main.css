@@ -1,0 +1,5 @@
+body {
+  padding: 0 20px 0 20px;
+}
+
+div[k-options="pie"], div[k-options="column"] { height: 300px; }

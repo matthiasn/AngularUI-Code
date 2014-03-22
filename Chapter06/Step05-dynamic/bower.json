@@ -1,0 +1,31 @@
+{
+  "name": "Step01",
+  "version": "0.1.0",
+  "homepage": "http://some-url.com",
+  "authors": [
+    "John Doe <john@doe.com>"
+  ],
+  "description": "Angular Pie Chart: Kendo UI",
+  "main": "src/index.html",
+  "keywords": [
+    "angular",
+    "animate"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.14",
+    "angular-kendo-ui": "~0.6.0",
+    "jquery": "~2.1.0",
+    "underscore": "~1.6.0",
+    "bootstrap": "~3.0.3"
+  }
+}

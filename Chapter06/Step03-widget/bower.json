@@ -5,7 +5,7 @@
   "authors": [
     "John Doe <john@doe.com>"
   ],
-  "description": "Angular Bar Chart: Pure CSS",
+  "description": "Angular Bar Chart: Widget",
   "main": "src/index.html",
   "keywords": [
     "angular",

@@ -1,22 +1,5 @@
 'use strict';
 angular.module('myApp.controllers', []).controller('KendoCtrl', function ($scope) {
-  $scope.pie = {
-    legend: {
-      visible: false
-    },
-    seriesDefaults: {
-      labels: {
-        visible: true,
-        template: "#= category #: #= value#%"
-      }
-    },
-    series: [{
-      type: "pie",
-      field: "value",
-      categoryField: "category"
-    }]
-  };
-
   $scope.frameworks = {
     data: [{
       category: "Angular.js",
@@ -38,6 +21,13 @@ angular.module('myApp.controllers', []).controller('KendoCtrl', function ($scope
       category: "Others",
       value: 14,
       color: "#004d38"
+    }]
+  };
+
+  $scope.pie = {
+    series: [{
+      type: "pie",
+      field: "value"
     }]
   };
 });

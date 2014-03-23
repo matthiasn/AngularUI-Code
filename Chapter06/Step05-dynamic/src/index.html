@@ -14,9 +14,17 @@
   <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default" ng-controller="IssueCtrl">
-        <div class="panel-heading"><b>Top 100 Issues with Assignee</b></div>
+        <div class="panel-heading"><b>Top 100 Open Issues with Assignee</b></div>
         <div class="panel-body">
           <div kendo-chart k-options="pie" k-data-source="data">Loading...</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default" ng-controller="PullCtrl">
+        <div class="panel-heading"><b>Top 100 Pull Requests Closed</b></div>
+        <div class="panel-body">
+          <div kendo-chart k-options="column" k-data-source="data"></div>
         </div>
       </div>
     </div>
@@ -26,7 +34,8 @@
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="http://cdn.kendostatic.com/2013.3.1119/js/kendo.all.min.js"></script>
+  <!--<script src="http://cdn.kendostatic.com/2013.3.1119/js/kendo.all.min.js"></script>-->
+  <script src="js/kendo.all.min.js"></script>
   <script src="bower_components/angular-kendo-ui/build/angular-kendo.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>

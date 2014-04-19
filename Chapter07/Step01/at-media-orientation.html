@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>@media CSS orientation</title>
+    <style type="text/css">
+      @media all and (orientation: landscape) {
+          button.double-page-mode { display: block; }
+      }
+      @media all and (orientation: portrait) {
+          button.double-page-mode { display: block; }
+      }
+    </style>
+</head>
+<body>
+  <blockquote>Try Changing the Orientation of a Device or Resizing the Window</blockquote>
+
+  <script type="text/javascript">
+    if (window.matchMedia("(orientation: portrait)").matches) {
+      document.getElementsByTagName('body')[0].style.display = 'none';
+      alert('The Portrait mode is not supported.');
+    } else {
+      document.getElementsByTagName('body')[0].style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Pin It</title>
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+</head>
+<body ng-app="myApp">
+  <nav class="top-bar" data-topbar="">
+    <ul class="title-area">
+      <li class="name"><h1><a href="#">Pin It - <i>The Universal Bookmarking App</i></a></h1></li>
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+        <li class="has-form">
+          <div class="row collapse">
+            <div class="large-8 small-9 columns">
+              <input type="text" placeholder="Find Bookmarks">
+            </div>
+            <div class="large-4 small-3 columns">
+              <a href="#" class="alert button expand">Search</a>
+            </div>
+          </div>
+        </li>
+        <li class="has-form">
+          <a class="button" data-reveal-id="addBookmark" data-reveal>Add New Bookmark</a>
+        </li>
+      </ul>
+    </section>
+  </nav>
+
+  <div class="row" style="padding-top: 20px;">
+    <div class="large-12 columns">
+      <div class="row">
+        <div class="large-2 columns small-2 text-center"><a class="th radius"><img src="img/angular20.jpg" /></a></div>
+        <div class="large-10 columns small-10">
+          <p>AngularJS 2.0 is a framework for mobile apps <br><a href="http://blog.angularjs.org/2014/03/angular-20.html" target='_blank'>http://blog.angularjs.org/2014/03/angular-20.html</a></p>
+
+          <span class="label round">angular</span>
+          <span class="label secondary round">angular advanced</span>
+          <span class="label alert round">mvc</span>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="large-2 columns small-2 text-center"><a class="th radius"><img src="img/durandal.jpg" /></a></div>
+        <div class="large-10 columns small-10">
+          <p>Angular and Durandal Converge <br><a href="http://blog.angularjs.org/2014/04/angular-and-durandal-converge.html" target='_blank'>http://blog.angularjs.org/2014/04/angular-and-durandal-converge.html</a> </p>
+
+          <span class="label round">angular</span>
+          <span class="label success round">durandal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination-centered">
+      <ul class="pagination">
+        <li class="arrow unavailable"><a href="">&laquo;</a></li>
+        <li class="current"><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li class="unavailable"><a href="">&hellip;</a></li>
+        <li><a href="">12</a></li>
+        <li><a href="">13</a></li>
+        <li class="arrow"><a href="">&raquo;</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="addBookmark" class="reveal-modal medium" data-reveal>
+    <h2>New Bookmark</h2>
+    <p class="lead">
+      <form name='bookmarkForm' novalidate>
+        <div class="row">
+          <div class="large-12 columns">
+            <label class='error'>URL
+              <input type="url" name="url" placeholder="Add bookmark URL" required />
+            </label>
+            <small class="error">Please enter valid URL - should begin with http or https</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label class='error'>Title
+              <input type="text" name="title" placeholder="Add bookmark Title" required />
+            </label>
+            <small class="error">Please enter bookmark Title</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label class='error'>Tags
+              <input type="text" name="tags" placeholder="comma separated tags i.e. angular,jquery,foundation" required />
+            </label>
+            <small class="error">Please use comma for more tags</small>
+          </div>
+        </div>
+
+        <button type='submit' class="button expand">Save Bookmark</button>
+      </form>
+    </p>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+<!--(if target dev)><!-->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/foundation/js/foundation.js"></script>
+<script src="js/app.js"></script>
+<!--<!(endif)-->
+<!--(if target dist)>
+<script src="js/fun-with-ng-animate.js"></script>
+<!(endif)-->
+</body>
+</html>

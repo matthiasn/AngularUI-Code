@@ -11,32 +11,28 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
 </head>
 <body ng-app="myApp">
-  <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-      <div class="cover-container">
+  <div class="cover-container">
 
-        <div class="masthead clearfix">
-          <div class="inner">
-            <h3 class="masthead-brand">TodoStrap</h3>
-          </div>
-        </div>
-
-        <div class="inner cover">
-          <div ng-controller="NgAnimateCtrl">
-            <form role="form">
-              <input ng-model="inputText" type="text" class="input-lg form-control" placeholder="What do you wanna do today?" autofocus ng-keyup="addItem($event)">
-            </form>
-
-            <div class="list-group" style="padding: 0px;margin-top: 10px;">
-              <a href="javascript:void(0);" class="list-group-item item" ng-repeat="item in items | active" ng-click="item.completed = !item.completed">
-                <span ng-bind="item.text"></span>
-              </a>
-            </div>
-          </div>
-        </div>
-
+    <div class="masthead clearfix">
+      <div class="inner text-center">
+        <h3 class="masthead-brand">TodoStrap</h3>
       </div>
     </div>
+
+    <div class="inner cover">
+      <div ng-controller="NgAnimateCtrl">
+        <form role="form">
+          <input ng-model="inputText" type="text" class="input-lg form-control" placeholder="What do you wanna do today?" autofocus ng-keyup="addItem($event)">
+        </form>
+
+        <div class="list-group" style="padding: 0px;margin-top: 10px;">
+          <a href="javascript:void(0);" class="list-group-item item" ng-repeat="item in items | active" ng-click="item.completed = !item.completed">
+            <span ng-bind="item.text"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 <!--(if target dev)><!-->

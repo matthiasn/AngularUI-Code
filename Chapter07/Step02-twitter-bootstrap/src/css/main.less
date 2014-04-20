@@ -1,0 +1,65 @@
+@enter: 1s;
+@leave: 1s;
+
+.item {
+  position: relative;
+}
+.item.ng-enter {
+  -webkit-animation: lightSpeedIn @enter;
+  -moz-animation: lightSpeedIn @enter;
+  -ms-animation: lightSpeedIn @enter;
+  animation: lightSpeedIn @enter;
+}
+.item.ng-leave {
+  -webkit-animation: lightSpeedOut @leave;
+  -moz-animation: lightSpeedOut @leave;
+  -ms-animation: lightSpeedOut @leave;
+  animation: lightSpeedOut @leave;
+}
+html,
+body {
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  overflow: hidden;
+}
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+.inner {
+  padding: 30px;
+}
+.cover {
+  padding: 0 20px;
+}
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media all and (orientation: portrait) {
+  .masthead,
+  .cover-container {
+    width: 100%;
+  }
+}
+
+@media all and (orientation: landscape) {
+  .masthead,
+  .cover-container {
+    width: 500px;
+  }
+}

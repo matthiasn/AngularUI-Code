@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Ship It</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="myApp">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Ship It - Universal Project Management Application</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4 col-md-3 sidebar">
+        <accordion close-others="false">
+          <accordion-group ng-init="project.open = true" is-open="project.open">
+              <accordion-heading>
+                  Projects
+                  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': project.open, 'glyphicon-chevron-right': !project.open}"></i>
+              </accordion-heading>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://placehold.it/32x32">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading"><a href="#/project/1">Project 1</a></h4>
+                </div>
+              </div>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://placehold.it/32x32">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading"><a href="#/project/2">Project 2</a></h4>
+                </div>
+              </div>
+          </accordion-group>
+          <accordion-group is-open="recent.open">
+              <accordion-heading>
+                  Recent Documents 
+                  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': recent.open, 'glyphicon-chevron-right': !recent.open}"></i>
+              </accordion-heading>
+              <ol class="list-unstyled">
+                <li><a href="#/document/1">Document 1</a></li>
+                <li><a href="#/document/2">Document 2</a></li>
+                <li><a href="#/document/3">Document 3</a></li>
+                <li><a href="#/document/4">Document 4</a></li>
+                <li><a href="#/document/5">Document 5</a></li>
+              </ol>
+          </accordion-group>
+        </accordion>
+      </div>
+      <div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-2 main">
+       <!-- Main Area -->
+      </div>
+    </div>
+  </div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

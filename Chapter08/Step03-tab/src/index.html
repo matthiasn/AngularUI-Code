@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Ship It</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="myApp">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Ship It - Universal Project Management Application</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-3 sidebar">
+        <accordion close-others="false">
+          <accordion-group ng-init="project.open = true" is-open="project.open">
+              <accordion-heading>
+                  Projects
+                  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': project.open, 'glyphicon-chevron-right': !project.open}"></i>
+              </accordion-heading>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://placehold.it/32x32">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading"><a href="#/project/1">Project 1</a></h4>
+                </div>
+              </div>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://placehold.it/32x32">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading"><a href="#/project/2">Project 2</a></h4>
+                </div>
+              </div>
+          </accordion-group>
+          <accordion-group is-open="recent.open">
+              <accordion-heading>
+                  Recent Documents 
+                  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': recent.open, 'glyphicon-chevron-right': !recent.open}"></i>
+              </accordion-heading>
+              <ol class="list-unstyled">
+                <li><a href="#/document/1">Document 1</a></li>
+                <li><a href="#/document/2">Document 2</a></li>
+                <li><a href="#/document/3">Document 3</a></li>
+                <li><a href="#/document/4">Document 4</a></li>
+                <li><a href="#/document/5">Document 5</a></li>
+              </ol>
+          </accordion-group>
+        </accordion>
+      </div>
+      <div class="col-xs-8 col-xs-offset-4 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
+        <tabset>
+          <tab heading="Projects Overview">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <span class="glyphicon glyphicon-bullhorn"></span>
+                    <b> Issue Tracking</b>
+                  </div>
+                  <ul class="list-group">
+                    <li class="list-group-item"><span class="label label-danger">Defect</span> 1168 open / 6313</li>
+                    <li class="list-group-item"><span class="label label-success">Feature</span> 2729 open / 5089</li>
+                    <li class="list-group-item"><span class="label label-warning">Patch</span> 409 open / 1848</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <b> Top Developers</b>
+                  </div>
+                  <table class="table">
+                    <tr>
+                      <td class="text-center"><a href="#/user/1">Sai Padamati</a></td>
+                      <td class="text-center"><a href="#/user/2">Akshay Ravindranath</a></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center"><a href="#/user/3">Dipti Kadge</a></td>
+                      <td class="text-center"><a href="#/user/4">Santosh Badge</a></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center"><a href="#/user/5">Shripad Joshi</a></td>
+                      <td class="text-center"><a href="#/user/6">Abshishek Kulkarni</a></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <h4>Activity</h4>
+                <table class="table">
+                  <tr>
+                    <td class="col-sm-1"><span class="glyphicon glyphicon-file"></span> <span class="text-muted">21:24</span></td>
+                    <td class="col-sm-4"><span class='label label-danger'>#1134</span> OAUTH is not functional</td>
+                    <td class="col-sm-6"><small class='text-muted'>The backend service throws an XML error even though credentials are valid. Sometimes authenticates with wrong password.</small></td>
+                  </tr>
+                  <tr>
+                    <td class="col-sm-1"><span class="glyphicon glyphicon-file"></span> <span class="text-muted">18:24</span></td>
+                    <td class="col-sm-4"><span class='label label-danger'>#1078</span> Popup design issue in IE</td>
+                    <td class="col-sm-6"><small class='text-muted'>It is not properly center align and also the backdrop is pitch dark unlike Chrome and FF.</small></td>
+                  </tr>
+                  <tr>
+                    <td class="col-sm-1"><span class="glyphicon glyphicon-file"></span> <span class="text-muted">13:24</span></td>
+                    <td class="col-sm-4"><span class='label label-success'>#2690</span> Dictionary service implementation</td>
+                    <td class="col-sm-6"><small class='text-muted'>We've integrated Google Translate service to improve dictionary lookup</small></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </tab>
+          <tab heading="Issues">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th class="text-right">#</th>
+                  <th class="text-center">Tracker</th>
+                  <th>Status</th>
+                  <th>Subject</th>
+                  <th class="text-right">Updated</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-sm-1 text-right"><a href="#/issue/16877">16877</a></td>
+                  <td class="col-sm-1 text-center"><span class='label label-danger'>Defect</span></td>
+                  <td class="col-sm-1">New</td>
+                  <td class="col-sm-7"><a href="#/issue/16877">No hook for issues closed by commit</a></td>
+                  <td class="col-sm-2 text-right">2014-05-13 21:43</td>
+                </tr>
+                <tr>
+                  <td class="col-sm-1 text-right"><a href="#/issue/1030">1030</a></td>
+                  <td class="col-sm-1 text-center"><span class='label label-success'>Feature</span></td>
+                  <td class="col-sm-1">New</td>
+                  <td class="col-sm-7"><a href="#/issue/1030">Way to filter tasks in project by milestones from child projects</a></td>
+                  <td class="col-sm-2 text-right">2014-05-10 21:43</td>
+                </tr>
+                <tr>
+                  <td class="col-sm-1 text-right"><a href="#/issue/2039">2039</a></td>
+                  <td class="col-sm-1 text-center"><span class='label label-danger'>Defect</span></td>
+                  <td class="col-sm-1">Reopened</td>
+                  <td class="col-sm-7"><a href="#/issue/2039">fixed member deletion to avoid dublicate after_destroy callbacks</a></td>
+                  <td class="col-sm-2 text-right">2014-05-13 11:43</td>
+                </tr>
+              </tbody>
+            </table>
+          </tab>
+          <tab>
+            <tab-heading>
+              <i class="glyphicon glyphicon-plus"></i>
+            </tab-heading>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

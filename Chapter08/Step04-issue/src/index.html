@@ -13,6 +13,21 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Ship It - Universal Project Management Application</a>
       </div>
+      <form class="navbar-form navbar-right" ng-controller="FindCtrl">
+        <input type="text" class="form-control" placeholder="Find Issues" ng-model="find" typeahead="issue.name for issue in issues | filter:$viewValue" typeahead-on-select='onSelect($item)'>
+        <div class="btn-group" dropdown>
+          <button type="button" class="btn btn-primary dropdown-toggle">
+            <span class='glyphicon glyphicon-cog'></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#/">New Project</a></li>
+            <li><a href="#/document">Upload Documents</a></li>
+            <li class="divider"></li>
+            <li><a href="#/settings">My Account</a></li>
+            <li><a href="#/login">Sign Out</a></li>
+          </ul>
+        </div>
+      </form>
     </div>
   </div>
 
@@ -156,20 +171,133 @@
               </tbody>
             </table>
           </tab>
+          <tab ng-controller="ViewIssueCtrl" ng-show="showTab">
+            <tab-heading>
+              <i class="glyphicon glyphicon-warning-sign"></i>
+              Issue #{{issueId}}
+            </tab-heading>
+            <div ng-view></div>
+          </tab>
           <tab>
             <tab-heading>
               <i class="glyphicon glyphicon-plus"></i>
             </tab-heading>
-            <!-- new issue form goes here -->
+            <form class="form-horizontal" role="form">
+              <div class="form-group col-lg-12">
+                <alert type="danger" close="hideAlert=true" ng-hide="hideAlert">Mandatory fields can't be blank.</alert>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">
+                  Tracker <span class="text-danger">*</span>
+                </label>
+                <div class="col-lg-3">
+                  <div class="btn-group">
+                    <label class="btn btn-danger" ng-model="tracker" btn-radio="'defect'">Defect</label>
+                    <label class="btn btn-success" ng-model="tracker" btn-radio="'feature'">Feature</label>
+                    <label class="btn btn-warning" ng-model="tracker" btn-radio="'patch'">Patch</label>
+                  </div>
+                </div>
+                <label class="col-lg-2 control-label">
+                  Project <span class="text-danger">*</span>
+                </label>
+                <div class="col-lg-3">
+                  <select class="form-control">
+                    <option value="project1">Project 1</option>
+                    <option value="project2">Project 2</option>
+                  </select> 
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">
+                  Subject <span class="text-danger">*</span>
+                </label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">
+                  Description
+                </label>
+                <div class="col-lg-10">
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">
+                  Priority <span class="text-danger">*</span>
+                </label>
+                <div class="col-lg-10">
+                  <rating ng-model="priority" max="5" on-hover="prepriority=value"></rating>
+                  <span class="label" ng-class="{'label-default': prepriority == 1, 'label-success': prepriority == 2, 'label-warning': prepriority == 3, 'label-info': prepriority == 4, 'label-danger': prepriority == 5}">
+                    {{['Low', 'Normal', 'High', 'Urgent', 'Immediate'][prepriority - 1]}}
+                  </span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">
+                  Files
+                </label>
+                <div class="col-lg-2" style='padding-top:8px;'>
+                  <input type="file" multiple><br>
+                </div>
+
+                <label class="col-lg-2 control-label" style="margin-top: -8px;">
+                  <h4 ng-init="showEstimate = false" ng-click="showEstimate = !showEstimate"><span class="label label-default">Estimate</span></h4>
+                </label>
+                <div class="col-lg-6 form-inline">
+                  <div class="well" collapse="showEstimate">
+                    <p>
+                      <input type="text" class="form-control"> Hours and 
+                      <b>% Done</b>
+                      <select class="form-control">
+                        <option value="0">0%</option>
+                        <option value="10">10%</option>
+                        <option value="20">20%</option>
+                        <option value="30">30%</option>
+                        <option value="40">40%</option>
+                        <option value="50">50%</option>
+                        <option value="60">60%</option>
+                        <option value="70">70%</option>
+                        <option value="80">80%</option>
+                        <option value="90">90%</option>
+                        <option value="100">100%</option>
+                      </select>
+                    </p>
+                    <p class="input-group">
+                      <input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="dateFrom" is-open="dateFrom.opened" placeholder="From Date"/>
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="$event.stopPropagation();dateFrom.opened = true;"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </p>
+                    <p class="input-group">
+                      <input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="dateTo" is-open="dateTo.opened" placeholder="To Date"/>
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="$event.stopPropagation();dateTo.opened = true;"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-2"></label>
+                <div class="col-lg-10">
+                  <button type="button" class="btn btn-inverse btn-lg">Create and Continue</button>
+                </div>
+              </div>
+            </form>
           </tab>
         </tabset>
       </div>
     </div>
   </div>
 
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
 </body>
 </html>

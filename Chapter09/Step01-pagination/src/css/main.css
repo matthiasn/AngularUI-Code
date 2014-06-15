@@ -1,0 +1,54 @@
+body {
+  padding: 50px;
+}
+
+.google-pagination {
+  text-align: center;
+}
+
+.google-pagination .csb {
+  height: 40px;
+  display: block;
+}
+
+.google-pagination .csb.prev {
+  background:url(https://www.google.co.in/images/nav_logo195_hr.png) no-repeat;
+  background-position:0 0;
+  background-size:167px;
+  width:53px;
+}
+
+.google-pagination .csb.noprev {
+  background:url(https://www.google.co.in/images/nav_logo195_hr.png) no-repeat;
+  background-position:-24px 0 !important;
+  background-size:167px;
+  width:28px !important;
+}
+
+.google-pagination .csb.active {
+  background:url(https://www.google.co.in/images/nav_logo195_hr.png) no-repeat;
+  background-position:-53px 0;
+  background-size:167px;
+  width:20px;
+}
+
+.google-pagination .csb.nonactive {
+  background:url(https://www.google.co.in/images/nav_logo195_hr.png) no-repeat;
+  background-position:-74px 0;
+  background-size:167px;
+  width:20px;
+}
+
+.google-pagination .csb.nonext {
+  background:url(https://www.google.co.in/images/nav_logo195_hr.png) no-repeat;
+  background-position:-96px 0 !important;
+  background-size:167px;
+  width:45px !important;
+}
+
+.google-pagination .csb.next {
+  background:url(https://www.google.co.in/images/nav_logo195_hr.png) no-repeat;
+  background-position:-96px 0;
+  background-size:167px;
+  width:71px;
+}

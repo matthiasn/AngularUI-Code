@@ -1,4 +1,4 @@
-angular.module('myApp.controllers', []).run(["$templateCache", function($templateCache) {
+angular.module('myApp.controllers', []).controller('GooglePaginationCtrl', function($scope, $templateCache) {
   $templateCache.put("template/pagination/pagination.html",
     '<table class="google-pagination">\
       <tbody>\
@@ -19,7 +19,7 @@ angular.module('myApp.controllers', []).run(["$templateCache", function($templat
       </tbody>\
     </table>'
   );
-}]).controller('GooglePaginationCtrl', function($scope) {
+
   $scope.totalItems = 100;
   $scope.currentPage = 2;
 });

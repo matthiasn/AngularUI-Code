@@ -1,0 +1,9 @@
+body {
+  padding: 50px;
+}
+
+.close {
+  position: relative;
+  top: -8px;
+  right: -10px;
+}

@@ -3,14 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Google Pagination</title>
+    <title>Advance Tab</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-app="myApp">
 
-  <div ng-controller="GooglePaginationCtrl">
-    <pagination total-items="totalItems" ng-model="currentPage"></pagination>
+  <div ng-controller="AdvanceTabCtrl">
+    <tabset>
+      <tab heading="{{tab.heading}}" ng-repeat="tab in tabList">
+        <div ng-include="tab.content"></div>
+      </tab>
+    </tabset>
   </div>
 
 <script src="bower_components/angular/angular.js"></script>

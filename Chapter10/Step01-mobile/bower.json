@@ -1,0 +1,33 @@
+{
+  "name": "Step01-Ng-Animate",
+  "version": "0.1.0",
+  "homepage": "http://some-url.com",
+  "authors": [
+    "John Doe <john@doe.com>"
+  ],
+  "description": "AngularUI NG-Animate Example",
+  "main": "src/index.html",
+  "keywords": [
+    "angular",
+    "animate"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.6",
+    "jquery": "~2.1.0",
+    "bootstrap": "~3.2.0",
+    "angular-route": "~1.2.20",
+    "angular-animate": "~1.2.20",
+    "modernizr": "~2.8.3",
+    "angular-touch": "~1.2.20"
+  }
+}

@@ -1,0 +1,46 @@
+html.touch .view-animation.backward.ng-enter {
+  -webkit-animation: enter_backward 0.5s linear;
+     -moz-animation: enter_backward 0.5s linear;
+       -o-animation: enter_backward 0.5s linear;
+          animation: enter_backward 0.5s linear;
+}
+@-webkit-keyframes enter_backward {
+  from { -webkit-transform: translate3d(-100%, 0, 0); }
+  to   { -webkit-transform: translate3d(0%, 0, 0); }
+}
+@-moz-keyframes enter_backward {
+  from { -moz-transform: translate3d(-100%, 0, 0); }
+  to   { -moz-transform: translate3d(0%, 0, 0); }
+}
+@-o-keyframes enter_backward {
+  from { -o-transform: translate3d(-100%, 0, 0); }
+  to   { -o-transform: translate3d(0%, 0, 0); }
+}
+@keyframes enter_backward {
+  from { transform: translate3d(-100%, 0, 0); }
+  to   { transform: translate3d(0%, 0, 0); }
+}
+
+
+html.touch .view-animation.forward.ng-enter {
+  -webkit-animation: enter_forward 0.5s linear;
+     -moz-animation: enter_forward 0.5s linear;
+       -o-animation: enter_forward 0.5s linear;
+          animation: enter_forward 0.5s linear;
+}
+@-webkit-keyframes enter_forward {
+  from { -webkit-transform: translate3d(100%, 0, 0); }
+  to   { -webkit-transform: translate3d(0%, 0, 0); }
+}
+@-moz-keyframes enter_forward {
+  from { -moz-transform: translate3d(100%, 0, 0); }
+  to   { -moz-transform: translate3d(0%, 0, 0); }
+}
+@-o-keyframes enter_forward {
+  from { -o-transform: translate3d(100%, 0, 0); }
+  to   { -o-transform: translate3d(0%, 0, 0); }
+}
+@keyframes enter_forward {
+  from { transform: translate3d(100%, 0, 0); }
+  to   { transform: translate3d(0%, 0, 0); }
+}

@@ -1,32 +1,26 @@
 <div ng-controller="MainCtrl" class="container-fluid" style="padding-top: 70px;" ng-swipe-left="paginate('forward')" ng-swipe-right="paginate('backward')">
   <div class="row" ng-repeat-start="bookmark in pageBookmarks">
     <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 text-right">
-      <!-- <a href="#"><img src="img/angular20.jpg"></a> -->
-      <a href="#"><img src="http://lorempixel.com/random/80/80"></a>
+      <a ng-href="{{bookmark.url}}" target='_blank'><img src="http://lorempixel.com/random/80/80"></a>
     </div>
     <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
-      <!-- <b>AngularJS 2.0 is a framework for mobile apps</b> -->
       <b ng-bind="bookmark.title"></b>
       <p>
-        <!-- <a href="http://blog.angularjs.org/2014/03/angular-20.html" target='_blank'>http://blog.angularjs.org/2014/03/angular-20.html</a> -->
-        <a ng-href="bookmark.url" target='_blank' ng-bind="bookmark.url"></a>
+        <a ng-href="{{bookmark.url}}" target='_blank' ng-bind="bookmark.url"></a>
       </p>
-      <!-- <span class="label label-primary">angular</span>
-      <span class="label label-default">angular advanced</span>
-      <span class="label label-danger">mvc</span> -->
       <span style="margin-right: 5px;" class="label" ng-class="{0:'label-default', 1: 'label-primary', 2: 'label-success', 3: 'label-info', 4: 'label-warning', 5: 'label-danger'}[$index % 6]" ng-repeat="tag in bookmark.tags" ng-bind="tag"></span>
     </div>
   </div>
   <hr ng-repeat-end>
 
-  <div class='text-center' ng-if="!Modernizr.touch">
+  <div class='text-center' ng-if="isDesktop()">
     <ul class="pagination">
       <li ng-class="{'disabled': isFirst()}">
         <span ng-if="isFirst()">&laquo;</span>
         <a ng-if="!isFirst()" ng-href="#/page/{{currentPage - 1}}">&laquo;</a>
       </li>
-      <li ng-repeat="totalPage in totalPages" ng-class="{'active': totalPage == currentPage}">
-        <a ng-href="#/page/{{$index + 1}}" ng-bind="totalPage"></a>
+      <li ng-repeat="page in pages" ng-class="{'active': page == currentPage}">
+        <a ng-href="#/page/{{$index + 1}}" ng-bind="page"></a>
       </li>
       <li ng-class="{'disabled': isLast()}">
         <span ng-if="isLast()">&raquo;</span>
@@ -34,33 +28,6 @@
       </li>
     </ul>
   </div>
-
-  <!-- <div class="row">
-    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 text-right">
-      <a href="#"><img src="img/durandal.jpg" /></a>
-    </div>
-    <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
-      <b>Angular and Durandal Converge</b>
-      <p>
-        <a href="http://blog.angularjs.org/2014/04/angular-and-durandal-converge.html" target='_blank'>http://blog.angularjs.org/2014/04/angular-and-durandal-converge.html</a>
-      </p>
-      <span class="label label-default">angular</span>
-      <span class="label label-primary">durandal</span>
-    </div>
-  </div>
-  <hr>
-
-  <div class='text-center'>
-    <ul class="pagination">
-      <li><a href="#">&laquo;</a></li>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li><a href="#">&raquo;</a></li>
-    </ul>
-  </div> -->
 </div>
 
 <div ng-controller="BookmarkCtrl" class="modal fade" id="addBookmark" tabindex="-1" role="dialog">
@@ -87,7 +54,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" ng-disabled="!bookmark.url || !bookmark.title || !bookmark.tags" ng-click="save()">Save Bookmark</button>
+        <button type="button" class="btn btn-primary btn-block" ng-disabled="!bookmark.url || !bookmark.title || !bookmark.tags" ng-click="save()">Save Bookmark</button>
       </div>
     </div>
   </div>

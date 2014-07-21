@@ -6,7 +6,6 @@
     <title>Pin It</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="bower_components/modernizr/modernizr.js"></script>
 </head>
 <body ng-app="myApp">
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -22,10 +21,10 @@
       </div>
       <div class="navbar-collapse collapse">
         <form class="navbar-form navbar-right" role="form">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Find Bookmarks">
+          <div class="input-group" ng-controller="SearchCtrl">
+            <input type="text" class="form-control" placeholder="Find Bookmarks" ng-model="searchCriteria">
             <span class="input-group-btn">
-              <button class="btn btn-danger">Search</button>
+              <button class="btn btn-danger" ng-click="searchIt(searchCriteria)">Search</button>
             </span>
           </div>
           <button class='btn btn-primary form-control' data-toggle="modal" data-target="#addBookmark">Add New Bookmark</button>
@@ -37,6 +36,7 @@
   <div ng-view class="view-animation" ng-class="slideDirection"></div>
 
 <!--(if target dev)><!-->
+<script src="bower_components/modernizr/modernizr.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
@@ -48,7 +48,7 @@
 <script src="js/services.js"></script>
 <!--<!(endif)-->
 <!--(if target dist)>
-<script src="js/fun-with-ng-animate.js"></script>
+<script src="js/pin-it.js"></script>
 <!(endif)-->
 </body>
 </html>

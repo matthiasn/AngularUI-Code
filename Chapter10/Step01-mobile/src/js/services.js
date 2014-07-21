@@ -1,6 +1,8 @@
 angular.module('myApp.services', [])
   .factory('BookmarkStore', function() {
     return {
+      searchCriteria: '',
+
       get: function(sorted) {
         var bookmarks = JSON.parse(localStorage.getItem('pin-bookmarks') || '[]');
         return sorted ? bookmarks.sort(function(a, b) { return a.created < b.created; }) : bookmarks;

@@ -1,18 +1,22 @@
 angular.module('myApp.controllers', [])
-  .controller('MainCtrl', function($scope, $rootScope, BookmarkStore, $route, $location, $element) {
-    $scope.Modernizr = Modernizr;
-    broadcastFn();
+  .controller('MainCtrl', function($scope, $rootScope, BookmarkStore, $route, $location, $filter) {
+    loadBookmarks();
 
-    $scope.$on('reloadBookmarks', broadcastFn);
+    $scope.$on('mainCtrl:loadBookmarks', loadBookmarks);
 
-    function broadcastFn() {
-      $scope.bookmarks = BookmarkStore.get(true);
-      $scope.perPage = Modernizr.touch ? 5 : 10;
+    function loadBookmarks() {
+      $scope.bookmarks = $filter('filter')(BookmarkStore.get(true), BookmarkStore.searchCriteria);
+      $scope.perPage = 10;
+      $scope.totalPages = Math.ceil($scope.bookmarks.length / $scope.perPage);
       $scope.currentPage = parseInt($route.current.params.pageNumber, false) || 1;
-      $scope.pageBookmarks = $scope.bookmarks.slice(($scope.currentPage - 1) * $scope.perPage, $scope.currentPage * $scope.perPage);
-      $scope.totalPages = [];
-      for (var i = 0; i < Math.ceil($scope.bookmarks.length / $scope.perPage); i++) {
-        $scope.totalPages.push(i + 1);
+      if ($scope.currentPage > $scope.totalPages) {
+        $location.path('/page/1');
+      } else {
+        $scope.pageBookmarks = $scope.bookmarks.slice(($scope.currentPage - 1) * $scope.perPage, $scope.currentPage * $scope.perPage);
+        $scope.pages = [];
+        for (var i = 0; i < $scope.totalPages; i++) {
+          $scope.pages.push(i + 1);
+        }
       }
     }
 
@@ -28,16 +32,14 @@ angular.module('myApp.controllers', [])
     };
 
     $scope.isLast = function() {
-      return $scope.currentPage === $scope.totalPages.length;
-    };
-  })
-  .controller('BookmarkCtrl', function($scope, BookmarkStore, $rootScope) {
-    $scope.bookmark = {
-      url: 'http://google.com',
-      title: 'foobar',
-      tags: 'foo,bar'
+      return $scope.currentPage === $scope.totalPages;
     };
 
+    $scope.isDesktop = function() {
+      return !Modernizr.touch && $scope.pages;
+    };
+  })
+  .controller('BookmarkCtrl', function($scope, BookmarkStore, $rootScope, $element) {
     $scope.save = function() {
       var arrBookmarks = BookmarkStore.get();
 
@@ -49,7 +51,15 @@ angular.module('myApp.controllers', [])
       });
 
       BookmarkStore.put(arrBookmarks);
-
-      $rootScope.$broadcast('reloadBookmarks', {});
+      $scope.bookmark = null;
+      $rootScope.$broadcast('mainCtrl:loadBookmarks', {});
+      $element.modal('hide');
+    };
+  })
+  .controller('SearchCtrl', function($scope, BookmarkStore, $location, $route) {
+    $scope.searchIt = function(searchCriteria) {
+      BookmarkStore.searchCriteria = searchCriteria;
+      $location.path('/page/1');
+      $route.reload();
     };
   });

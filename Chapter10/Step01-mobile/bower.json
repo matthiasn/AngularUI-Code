@@ -1,15 +1,11 @@
 {
-  "name": "Step01-Ng-Animate",
+  "name": "pin-it",
   "version": "0.1.0",
-  "homepage": "http://some-url.com",
-  "authors": [
-    "John Doe <john@doe.com>"
-  ],
-  "description": "AngularUI NG-Animate Example",
+  "description": "Mobile Development using AngularJS and Bootstrap",
   "main": "src/index.html",
   "keywords": [
     "angular",
-    "animate"
+    "angular-touch"
   ],
   "license": "MIT",
   "private": true,

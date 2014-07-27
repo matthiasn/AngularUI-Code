@@ -4,11 +4,12 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-cssmin": "~0.5.0",
-    "grunt-ngmin": "~0.0.2",
+    "grunt-contrib-htmlmin": "^0.3.0",
     "grunt-contrib-uglify": "~0.2.0",
+    "grunt-ng-annotate": "^0.3.0",
     "grunt-targethtml": "~0.2.6"
   }
 }

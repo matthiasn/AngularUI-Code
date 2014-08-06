@@ -2,9 +2,9 @@ module.exports = function(config){
     config.set({
     basePath : '../',
     files : [
-      'app/js/vendor/angular.js',
+      'src/js/vendor/angular.js',
       'test/lib/angular-mocks.js',
-      'app/js/**/*.js',
+      'src/js/**/*.js',
       'test/unit/**/*.js'
     ],
     autoWatch : true,

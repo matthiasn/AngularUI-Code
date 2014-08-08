@@ -21890,8 +21890,8 @@ angular.module('myApp.directives', [])
     return {
         restrict: 'AE',
         scope: { name: "=name" },
-        template: 	"<div>Hello {{ name.first }} {{ name.last }}!</div>" +
-					"<input data-ng-model='name.first'></input>" + 
-					"<input data-ng-model='name.last'></input>"
+        template: "<h1>Hello {{ name.first }} {{ name.last }}!</h1>" +
+                  "<input data-ng-model='name.first'></input>" + 
+                  "<input data-ng-model='name.last'></input>"
         }
     });

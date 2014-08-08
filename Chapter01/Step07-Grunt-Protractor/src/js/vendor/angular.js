@@ -21880,18 +21880,4 @@ var styleDirective = valueFn({
 
 })(window, document);
 
-!window.angular.$$csp() && window.angular.element(document).find('head').prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>');;'use strict';
-angular.module('myApp', ['myApp.controllers', 'myApp.directives']);;'use strict';
-angular.module('myApp.controllers', []).controller('helloWorldCtrl',function ($scope) {
-        $scope.name = { first: "Jane", last: "Doe" };
-    });;'use strict';
-angular.module('myApp.directives', [])
-.directive('helloWorld', function () {
-    return {
-        restrict: 'AE',
-        scope: { name: "=name" },
-        template: "<h1>Hello {{ name.first }} {{ name.last }}!</h1>" +
-                  "<input data-ng-model='name.first'></input>" + 
-                  "<input data-ng-model='name.last'></input>"
-        }
-    });
+!window.angular.$$csp() && window.angular.element(document).find('head').prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>');

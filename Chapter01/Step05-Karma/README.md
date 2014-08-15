@@ -1,9 +1,5 @@
 #Step 5 - Karma
 
-Install NPM modules:
-
-    npm install
-
 Install client-side dependencies:
 
     bower install

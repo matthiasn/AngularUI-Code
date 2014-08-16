@@ -5,7 +5,7 @@
   "authors": [
     "John Doe <john@doe.com>"
   ],
-  "description": "Angular Pie Chart: Kendo UI",
+  "description": "Angular Pie Chart",
   "main": "src/index.html",
   "keywords": [
     "angular",
@@ -23,7 +23,6 @@
   ],
   "dependencies": {
     "angular": "~1.2.14",
-    "angular-kendo-ui": "~0.6.0",
-    "jquery": "~2.1.0"
+    "angular-google-chart": "~0.0.10"
   }
 }

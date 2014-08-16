@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('myApp', ['kendo.directives', 'myApp.controllers']);
+angular.module('myApp', ['nvd3ChartDirectives', 'myApp.controllers']);

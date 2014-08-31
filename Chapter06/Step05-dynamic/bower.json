@@ -5,7 +5,7 @@
   "authors": [
     "John Doe <john@doe.com>"
   ],
-  "description": "Angular Pie Chart: Kendo UI",
+  "description": "Angular Dashboard",
   "main": "src/index.html",
   "keywords": [
     "angular",
@@ -23,9 +23,10 @@
   ],
   "dependencies": {
     "angular": "~1.2.14",
-    "angular-kendo-ui": "~0.6.0",
-    "jquery": "~2.1.0",
     "underscore": "~1.6.0",
-    "bootstrap": "~3.0.3"
+    "bootstrap": "~3.0.3",
+    "d3": "~3.4.11",
+    "nvd3": "~1.1.15-beta",
+    "angularjs-nvd3-directives": "~0.0.7"
   }
 }

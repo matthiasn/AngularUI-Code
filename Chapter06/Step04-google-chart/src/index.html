@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Angular Pie Chart: Google Chart</title>
+</head>
+<body ng-app="myApp">
+  <h1>Google Trends: JS frameworks</h1>
+
+  <div ng-controller="ChartCtrl">
+    <div google-chart chart="chartObject" style="height:400px; width:100%;"></div>
+  </div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-google-chart/ng-google-chart.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+</body>
+</html>
+

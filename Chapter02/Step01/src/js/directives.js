@@ -5,7 +5,7 @@ angular.module('myApp.directives', [])
         restrict: 'AE',
         scope: { name: "=name" },
         template: 	"<div>Hello {{ name.first }} {{ name.last }}!</div>" +
-					"<input data-ng-model='name.first'></input>" + 
-					"<input data-ng-model='name.last'></input>"
+					"<input ng-model='name.first'></input>" + 
+					"<input ng-model='name.last'></input>"
         }
     });

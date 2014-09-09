@@ -1,12 +1,12 @@
 'use strict';
 angular.module('myApp.controllers', []).controller('helloWorldCtrl', function ($scope, $timeout) {
-    $scope.name = {
-        first: "Jane",
-        last: "Doe"
+    $scope.person = {
+        firstName: "Jane",
+        lastName: "Doe"
     };
     $scope.mask = "(999) 999-9999 ext 99";
     $scope.getModel = function () {
-        return JSON.stringify($scope.name, undefined, 2);
+        return JSON.stringify($scope.person, undefined, 2);
     };
 
     var colors = ["#CCC", "#F77", "#9F9"];

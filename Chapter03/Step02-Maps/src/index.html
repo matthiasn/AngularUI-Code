@@ -9,10 +9,10 @@
 <body id="myApp">
 
 <section id="map" ng-controller="MapCtrl">
-    <div data-ui-map="myMap" data-ui-options="mapOptions" class="map-canvas"
+    <div data-ui-map="myMap" ui-options="mapOptions" class="map-canvas"
          data-ui-event="eventBinding"></div>
 
-    <div class="marker" data-ng-repeat="marker in myMarkers" data-ng-click="myMap.panTo(marker.getPosition())">
+    <div class="marker" ng-repeat="marker in myMarkers" ng-click="myMap.panTo(marker.getPosition())">
         Lat: {{ marker.getPosition().lat() }} <br />Lng: {{ marker.getPosition().lng() }}</div>
 
 </section>

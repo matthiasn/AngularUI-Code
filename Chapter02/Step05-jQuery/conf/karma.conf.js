@@ -2,8 +2,8 @@ module.exports = function(config){
     config.set({
     basePath : '../',
     files : [
-      'src/js/vendor/jquery-1.10.2.js',
-      'src/js/vendor/angular.js',
+      'src/bower/angular/angular.js',
+      'src/bower/angular-mocks/angular-mocks.js',
       'test/lib/angular-mocks.js',
       'src/js/vendor/bootstrap.js',
       'src/js/app.js',

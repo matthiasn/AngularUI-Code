@@ -9,7 +9,6 @@ angular.module('myApp.controllers', []).controller('NgGridCtrl',
                 {field: 'year', displayName: 'Year', width: "25%"},
                 {field: 'decade', displayName: 'Decade', width: "30%"}
             ],
-            showGroupPanel: true,
-            jqueryUIDraggable: true
+            showGroupPanel: true
         };
     }]);

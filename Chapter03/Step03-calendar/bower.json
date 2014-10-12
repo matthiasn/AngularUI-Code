@@ -2,7 +2,9 @@
   "name": "Step03-Calendar",
   "version": "0.1.0",
   "homepage": "http://some-url.com",
-  "authors": [ "John Doe <john@doe.com>" ],
+  "authors": [
+    "John Doe <john@doe.com>"
+  ],
   "description": "AngularUI Calendar Example",
   "main": "src/index.html",
   "keywords": [
@@ -21,6 +23,7 @@
   ],
   "dependencies": {
     "angular-ui-calendar": "~0.1.3",
-    "momentjs": "~2.4.0"
+    "momentjs": "~2.4.0",
+    "angular-mocks": "~1.2.26"
   }
 }

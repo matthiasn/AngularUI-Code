@@ -4,8 +4,12 @@ module.exports = function(grunt) {
     concat: {
       options: { separator: ';' },
       dist: {
-        src: [ 'src/js/vendor/jquery-1.10.2.js', 'src/js/vendor/angular.js',
-               'src/js/vendor/ui-utils.js', 'src/js/app.js', 'src/js/controllers.js' ],
+        src: [ 'src/bower_components/jquery/jquery.js',
+               'src/bower_components/angular/angular.js',
+               'src/bower_components/angular-ui-utils/ui-utils.js',
+               'src/bower_components/angular-ui-map/ui-map.js',
+               'src/js/app.js', 
+               'src/js/controllers.js'],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
     },
@@ -30,5 +34,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-targethtml');
   grunt.loadNpmTasks('grunt-karma');
-  grunt.registerTask('dist', ['karma', 'concat', 'targethtml', 'copy']);
+  grunt.registerTask('dist', ['concat', 'targethtml', 'copy']);
 };

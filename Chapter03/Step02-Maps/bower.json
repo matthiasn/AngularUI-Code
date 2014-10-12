@@ -2,7 +2,9 @@
   "name": "Step02-Maps",
   "version": "0.1.0",
   "homepage": "http://some-url.com",
-  "authors": [ "John Doe <john@doe.com>" ],
+  "authors": [
+    "John Doe <john@doe.com>"
+  ],
   "description": "AngularUI Map Example",
   "main": "src/index.html",
   "keywords": [
@@ -20,6 +22,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ui-map": "~0.0.2"
+      "angular": "~1.2.26",
+      "angular-mocks": "~1.2.26",
+      "angular-ui-map": "~0.5.0"
   }
 }

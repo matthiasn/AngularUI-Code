@@ -1,9 +1,5 @@
 node_modules/
 dist/
 *.iml
-.idea/
-
-.idea/workspace.xml
-
-.idea/modules.xml
+.idea
 bower/

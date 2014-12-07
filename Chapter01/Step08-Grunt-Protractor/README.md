@@ -1,6 +1,13 @@
-#Step 4 - Bower
+#Step 8 - Grunt Protractor
 
-You need to run Bower first to install client-side dependencies:
+Install client-side dependencies:
 
-    bower install
+	bower install
 
+    npm install
+
+    http-server -a localhost -p 8000
+    
+    webdriver-manager start
+    
+    grunt dist

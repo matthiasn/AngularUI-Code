@@ -1,9 +1,9 @@
-#Step 7 - Grunt
+#Step 1 - Mobile
 
 Install client-side dependencies:
 
 	bower install
 
-    npm install
+	npm install
 
-    grunt dist
+	grunt dist

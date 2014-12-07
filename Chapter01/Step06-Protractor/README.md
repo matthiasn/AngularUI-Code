@@ -4,9 +4,10 @@ Install client-side dependencies:
 
     bower install
 
-You will also need the globally installed command line interface for Protractor and then update webdriver-manager (potentially with sudo):
+    npm install
 
-    npm install –g protractor
-    webdriver-manager update
-
-Follow along chapter 1 in the book for detailed instructions.
+    http-server -a localhost -p 8000
+    
+    webdriver-manager start
+    
+    protractor conf/protractor.conf.js 

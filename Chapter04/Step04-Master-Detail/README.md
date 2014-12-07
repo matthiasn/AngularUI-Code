@@ -1,9 +1,7 @@
-#Step 7 - Grunt
+#Step 4 - Master Detail
 
 Install client-side dependencies:
 
 	bower install
 
     npm install
-
-    grunt dist

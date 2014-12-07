@@ -1,9 +1,7 @@
-#Step 7 - Grunt
+#Step 3 - Grouped Grid
 
 Install client-side dependencies:
 
 	bower install
 
     npm install
-
-    grunt dist

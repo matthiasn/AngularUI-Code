@@ -34,5 +34,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-targethtml');
   grunt.loadNpmTasks('grunt-karma');
-  grunt.registerTask('dist', ['karma', 'concat', 'targethtml', 'copy']);
+  grunt.registerTask('dist', ['concat', 'targethtml', 'copy']);
 };
